@@ -9,3 +9,16 @@
     <p>{{media.description}}</p>
   </li>
 </ul>
+<hr>
+<form (submit)="getDigitransit()">
+  <input [(ngModel)]="stop" name="stop" placeholder="enter the stop" >
+</form>
+
+<div *ngFor="let stop of stopArray">
+  <h3>{{stop.name}}</h3>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let route of stop.patterns">
+      <p>{{route.name}}</p>
+    </li>
+  </ul>
+</div>
